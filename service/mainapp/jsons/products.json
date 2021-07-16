@@ -1,0 +1,47 @@
+[
+  {
+    "category": "Стулья",
+    "name": "Красный стул",
+    "image": "product_images/product-4.jpg",
+    "short_desc": "Красивый стул",
+    "description": "",
+    "price": "2200.00",
+    "quantity": 20
+  },
+  {
+    "category": "Классика",
+    "name": "Лампа сфера",
+    "image": "product_images/product-1.jpg",
+    "short_desc": "Нежный свет",
+    "description": "",
+    "price": "4500.00",
+    "quantity": 15
+  },
+  {
+    "category": "Модерн",
+    "name": "Кресло из белой кожи",
+    "image": "product_images/product-21.jpg",
+    "short_desc": "Уникальный дизайн",
+    "description": "",
+    "price": "14300.00",
+    "quantity": 12
+  },
+  {
+    "category": "Офис",
+    "name": "Лампа-капля",
+    "image": "product_images/product-11.jpg",
+    "short_desc": "Лампа в стиле модерн",
+    "description": "Теплый свет",
+    "price": "3500.00",
+    "quantity": 12
+  },
+  {
+    "category": "Модерн",
+    "name": "Лампа настольная",
+    "image": "product_images/product-31.jpg",
+    "short_desc": "Для письменного стола",
+    "description": "Яркий свет",
+    "price": "4200.00",
+    "quantity": 30
+  }
+]
