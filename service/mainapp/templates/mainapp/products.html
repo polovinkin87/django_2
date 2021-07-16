@@ -48,19 +48,41 @@
 				</div>
 			</div>
 
+		<div class="featured">
+			<div class="featured-menu">
+					<a class="active" href="#">Популярные</a><a href="#">Новинки</a>
+			</div>
+			<a class="explore" href="#">показать все <img src="{% static 'service/img/arrow.png' %}" alt=""></a>
+			<div class="clearfix">
+			</div>
+			<div class="tab-content">
+				{% for product in products %}
+				<div class="block">
+					<a href="{% url 'basket:add' product.pk %}"><img src="/media/{{product.image}}" alt="">
+						<div class="text">
+							<img src="{% static 'service/img/icon-hover.png' %}" alt="img">
+							<h4>{{product.name}}</h4>
+							<p>{{product.short_desc}}. </p>
+						</div>
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+
 			<div class="related">
 				<div class="title clearfix">
 					<h2>Похожие продукты</h2>
 					<a class="explore" href="#">показать все <img src="{% static 'service/img/arrow.png' %}" alt=""></a>
 				</div>
 				<div class="related-products clearfix">
-					{% for product in product %}
+					{% for prod in products %}
 					<div class="block">
-						<a href="#"><img src="/media/{{product.image}}" alt="">
+						<a href="#"><img src="/media/{{prod.image}}" alt="">
 							<div class="text">
 								<img src="{% static 'service/img/icon-hover.png' %}" alt="img">
-								<h4>{{product.name}}</h4>
-								<p>{{product.short_desc}}. </p>
+								<h4>{{prod.name}}</h4>
+								<p>{{prod.short_desc}}. </p>
 							</div>
 						</a>
 					</div>
