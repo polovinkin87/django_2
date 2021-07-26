@@ -1,5 +1,5 @@
 from authapp.forms import ShopUserRegisterForm
-from adminapp.forms import ShopUserAdminEditForm
+from adminapp.forms import ShopUserAdminEditForm, CreateCategoryForm, CreateProductForm
 from authapp.models import ShopUser
 from django.shortcuts import get_object_or_404, render
 from mainapp.models import Product, ProductCategory
@@ -96,16 +96,43 @@ def categories(request):
     return render(request, 'adminapp/categories.html', context)
 
 
-def category_create(request):
-    pass
-
-
 def category_update(request, pk):
-    pass
+    title = 'создание категории'
+    category = get_object_or_404(ProductCategory, pk=pk)
+    if request.method == 'POST':
+        create_cat = CreateCategoryForm(request.POST, request.FILES, instance=category)
+        if create_cat.is_valid():
+            create_cat.save()
+            return HttpResponseRedirect('/adminapp/categories/read/')
+    else:
+        create_cat = CreateCategoryForm(instance=category)
+
+    context = {'title': title, 'create_cat': create_cat}
+
+    return render(request, 'adminapp/category_create.html', context)
+
+
+def category_create(request):
+    title = 'создание категории'
+
+    if request.method == 'POST':
+        create_cat = CreateCategoryForm(request.POST, request.FILES)
+        if create_cat.is_valid():
+            create_cat.save()
+            return HttpResponseRedirect('/adminapp/categories/read/')
+    else:
+        create_cat = CreateCategoryForm()
+
+    context = {'title': title, 'create_cat': create_cat}
+
+    return render(request, 'adminapp/category_create.html', context)
 
 
 def category_delete(request, pk):
-    pass
+    title = 'удаление категории'
+    category = get_object_or_404(ProductCategory, pk=pk)
+    category.delete()
+    return HttpResponseRedirect('/adminapp/categories/read/')
 
 
 def products(request, pk):
@@ -114,13 +141,13 @@ def products(request, pk):
     category = get_object_or_404(ProductCategory, pk=pk)
     products_list = Product.objects.filter(category__pk=pk).order_by('name')
 
-    content = {
+    context = {
         'title': title,
         'category': category,
         'objects': products_list,
     }
 
-    return render(request, 'adminapp/products.html', content)
+    return render(request, 'adminapp/products.html', context)
 
 
 def product_create(request, pk):

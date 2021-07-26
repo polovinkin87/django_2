@@ -40,8 +40,8 @@
                         <tbody>
                         {% for user in objects %}
                         <tr {% if user.is_deleted %} style="opacity: 0.5;" {% endif %}>
-                            <td><a href="{% url 'admin_staff:user_update' user.id %}" style="color: dodgerblue">{{
-                                user.username }}</a></td>
+                            <td><a href="{% url 'admin_staff:user_update' user.id %}" style="color: dodgerblue">
+                                {{ user.username }}</a></td>
                             <td>{{ user.first_name }}</td>
                             <td>{{ user.last_name }}</td>
                             <td>{{ user.email }}</td>
@@ -62,7 +62,7 @@
                             <td>{{ user.last_login }}</td>
                             <td>
                                 <a {% if user.is_deleted %} class="invisible" {% endif %}
-                                   href="{#% url 'admin_staff:user_delete' pk=user.id %#}">
+                                   href="{% url 'admin_staff:user_delete' pk=user.id %}">
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </td>
