@@ -26,7 +26,6 @@ def get_same_products(hot_product):
 
 def products(request, pk=None, page=1):
     title = 'продукты/каталог'
-    basket = get_basket(request.user)
     links_menu = ProductCategory.objects.all()
     products = Product.objects.all().order_by('price')
     hot_product = get_hot_product()
@@ -65,7 +64,6 @@ def products(request, pk=None, page=1):
         'hot_product': hot_product,
         'same_products': same_products,
         'products': products,
-        'basket': basket,
     }
 
     return render(request=request, template_name='mainapp/products.html', context=context)
