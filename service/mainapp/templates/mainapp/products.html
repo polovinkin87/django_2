@@ -1,6 +1,10 @@
 {% extends 'service/base.html' %}
 {% load static %}
 
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'mainapp/style.css' %}">
+{% endblock %}
+
 {% block content%}
 
 <div class="details">
@@ -83,7 +87,7 @@
             {% endfor %}
         </div>
     </div>
-
+    {% if same_products %}
     <div class="related">
         <div class="title clearfix">
             <h2>Похожие продукты</h2>
@@ -112,7 +116,9 @@
             {% endfor %}
         </div>
     </div>
+    {% endif %}
 </div>
+{% else %}
 
 {% endif %}
 {% endblock %}

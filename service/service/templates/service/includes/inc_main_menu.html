@@ -12,9 +12,10 @@
         </li>
         {% endif %}
         {% if user.is_authenticated %}
-        <li>
+        <li style="margin-top: -8px;">
             <div class="dropdown">
-                <a class="dropdown-toggle" href="" data-toggle="dropdown">
+
+               <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     {{ user.first_name|default:'Пользователь' }}
                     <span class="caret"></span>
                 </a>
