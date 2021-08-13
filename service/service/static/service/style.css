@@ -12,12 +12,8 @@ html, body {
 	height: 100%;
 }
 
-.clr {
-	height: 384px;
-}
-
 .container {
-	width: 1366px;
+	width: 1566px;
 	margin: 0 auto;
 	min-height: 100%;
 }
@@ -76,9 +72,9 @@ html, body {
 	width: 23px;
 	height: 23px;	
 	background-image: url(img/search.png);
-	position: absolute;
-	top: 63px;
-	left: 1176px;
+	position: relative;
+	top: 75px;
+	float: right;
 }
 .basket {
 	display: block;
@@ -253,7 +249,7 @@ html, body {
 	border-bottom: 3px solid #6c6c6c;
 }
 
-.tab-content {
+/*.tab-content {
 	margin-top: 50px;
 	display: flex;
 	justify-content: space-between;
@@ -263,7 +259,7 @@ html, body {
 	height: 270px;
 	width: 270px;
 	position: relative;
-}
+}*/
 .tab-content a .text {
 	display: none;
 	height: 268px;
@@ -541,12 +537,12 @@ html, body {
 
 .footer {
 	height: 384px;
-	width: 1169px;
+	/*width: 1169px;*/
 	background-color: #f7f7f7;
 	padding-left: 99px;
-	padding-right: 98px;
-	margin: -384px auto 0;
+	padding-right: 45px;
 	clear: both;
+	margin-top: 20px;
 }
 .footer form {
 	position: relative;
@@ -887,27 +883,27 @@ td:first-child {
 	font-weight: 700;
 }
 
-.details-products {
+/*.details-products {
 	padding-left: 98px;
 	padding-right: 98px;
 	margin-top: 98px;
 	height: 651px; 
-}
+}*/
 .details-slider {
 	width: 570px;
 	float: left;
 	margin-right: 30px;
 }
-.slider-product {
+/*.slider-product {
 	width: 570px;
 	height: 570px;
-}
-.slider-control {
+}*/
+/*.slider-control {
 	width: 420px;
 	height: 70px;
 	margin: 11px auto 0px;
 	padding-left: 150px
-}
+}*/
 .slider-control .block {
 	height: 70px;
 	width: 70px;
@@ -928,10 +924,22 @@ td:first-child {
 	display: block;
 }
 
+.block {
+	width: 25%;
+	margin-top: 50px;
+	margin-bottom: 150px;
+}
+.block img {
+	width: 100%;
+}
+.block a .text img {
+	width: 25%;
+}
+
 .description {
 	width: 535px;
 	float: right;
-	padding-left: 35px
+	/*padding-left: 35px*/
 }
 .description .big-bold {
 	/*text-transform: capitalize;*/
@@ -1006,7 +1014,7 @@ td:first-child {
 	margin-bottom: 0.5em;
 }
 
-.related {
+/*.related {
 	padding: 0px 98px;
 }
 .related .title {
@@ -1032,7 +1040,7 @@ td:first-child {
 	height: 370px;
 	width: 370px;
 	position: relative;
-}
+}*/
 .related-products .block:nth-child(3n) {
 	margin-right: 0px;
 }
